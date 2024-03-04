@@ -64,7 +64,7 @@ if __name__ == '__main__':
     input_img_transposed = torch.tensor(input_img_transposed, dtype=torch.float32)
 
     model = Model(cols, rows, channels)
-    path = "./models/new/" + game + "_" + 'generic_classifier_py' + ".pth"
+    path = "./models/" + game + "_" + 'generic_classifier_py' + ".pth"
     model.load_state_dict(torch.load(path))
     model = model.eval()
     pred_label_idx = predict(model, input_img_transposed)

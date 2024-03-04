@@ -42,7 +42,7 @@ class Shapley():
             self.channels = SUPERCAT_CHANNELS
 
         # get model
-        path = 'models/model_' + game + '.pth'
+        path = "./models/" + game + "_" + 'generic_classifier_py' + ".pth"
         self.num_channels = len(self.X[0][0][0])
         self.model = Model(self.cols, self.rows, self.num_channels)
         self.model.load_state_dict(torch.load(path))

@@ -167,7 +167,7 @@ if __name__ == '__main__':
 
     print('Test Loss:', loss)
     print('Test Accuracy:', accuracy)
-    model_name = "./models/new/" + game + "_" + 'generic_classifier_py' + ".pth"
+    model_name = "./models/" + game + "_" + 'generic_classifier_py' + ".pth"
     torch.save(model.state_dict(), model_name)
     with open('models/metrics_' + game + '.json', "w") as json_file:
         json.dump({
