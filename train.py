@@ -4,14 +4,13 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from utility import get_dataset
+from data_utility import get_dataset
 import argparse
 import numpy as np
 import json
 from datetime import datetime
 from sklearn.model_selection import train_test_split
 from constants import CAVE_CHANNELS, CAVE_COLS, CAVE_ROWS, MARIO_CHANNELS, MARIO_COLS, MARIO_ROWS, SUPERCAT_CHANNELS, SUPERCAT_COLS, SUPERCAT_ROWS
-from constants import TOMB_COLS, TOMB_ROWS, TOMB_CHANNELS
 
 def train(model, train_loader, val_loader, criterion, optimizer, num_epochs):
     # Train the model for the specified number of epochs
@@ -99,10 +98,6 @@ if __name__ == '__main__':
         cols = MARIO_COLS
         rows = MARIO_ROWS
         channels = MARIO_CHANNELS
-    elif game == 'tomb':
-        cols = TOMB_COLS
-        rows = TOMB_ROWS
-        channels = TOMB_CHANNELS
     elif game == 'supercat':
         cols = SUPERCAT_COLS
         rows = SUPERCAT_ROWS

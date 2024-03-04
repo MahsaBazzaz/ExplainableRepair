@@ -14,14 +14,3 @@ SUPERCAT_COLS = 20
 SUPERCAT_ROWS = 20
 SUPERCAT_CHANNELS = 4
 supercat_chars_unique = sorted(list(["-","X", "}", "{"]))
-
-ICARUS_COLS = 25
-ICARUS_ROWS = 16
-
-ZELDA_COLS = 7
-ZELDA_ROWS = 11
-
-TOMB_COLS = 30
-TOMB_ROWS = 15
-TOMB_CHANNELS = 4
-tomb_chars_unique = sorted(list(["-","X", "}", "{"]))

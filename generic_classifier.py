@@ -2,11 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from constants import CAVE_CHANNELS, CAVE_COLS, CAVE_ROWS, MARIO_CHANNELS, MARIO_COLS, MARIO_ROWS, SUPERCAT_CHANNELS, SUPERCAT_COLS, SUPERCAT_ROWS, mario_chars_unique
-from constants import TOMB_COLS, TOMB_ROWS, TOMB_CHANNELS, tomb_chars_unique
-from utility import get_dataset
-from sklearn.model_selection import train_test_split
-
 import torch
 import torch.nn as nn
 import torch.optim as optim

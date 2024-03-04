@@ -1,7 +1,7 @@
 import numpy as np
 import random
-from constants import CAVE_COLS, CAVE_ROWS, CAVE_CHANNELS, MARIO_COLS, MARIO_ROWS, MARIO_CHANNELS, SUPERCAT_CHANNELS, SUPERCAT_COLS, SUPERCAT_ROWS, TOMB_COLS,TOMB_ROWS, TOMB_CHANNELS
-from constants import cave_chars_unique, mario_replacements, mario_chars_unique, tomb_chars_unique, supercat_chars_unique
+from constants import CAVE_COLS, CAVE_ROWS, CAVE_CHANNELS, MARIO_COLS, MARIO_ROWS, MARIO_CHANNELS, SUPERCAT_CHANNELS, SUPERCAT_COLS, SUPERCAT_ROWS
+from constants import cave_chars_unique, mario_replacements, mario_chars_unique, supercat_chars_unique
 
 
 def get_dataset(name):
@@ -14,11 +14,6 @@ def get_dataset(name):
       int2char = dict(enumerate(mario_chars_unique))
       playbale_file_path = './db/mario/playble.txt'
       unplaybale_file_path = './db/mario/unplayble.txt'
-
-    elif name == "tomb":
-      int2char = dict(enumerate(tomb_chars_unique))
-      playbale_file_path = './db/tomb/playble.txt'
-      unplaybale_file_path = './db/tomb/unplayble.txt'
     
     elif name == "supercat":
       int2char = dict(enumerate(supercat_chars_unique))
@@ -85,8 +80,6 @@ def get_dataset(name):
        levels = levels.reshape(-1,CAVE_COLS,CAVE_ROWS,CAVE_CHANNELS)
     elif name == 'mario':
        levels = levels.reshape(-1,MARIO_COLS, MARIO_ROWS, MARIO_CHANNELS)
-    elif name == 'tomb':
-       levels = levels.reshape(-1,TOMB_COLS, TOMB_ROWS, TOMB_CHANNELS)
     elif name == 'supercat':
        levels = levels.reshape(-1,SUPERCAT_COLS, SUPERCAT_ROWS, SUPERCAT_CHANNELS)
     return levels, labels
@@ -96,8 +89,6 @@ def get_level(name, input):
       int2char = dict(enumerate(cave_chars_unique))
     elif name == "mario":
       int2char = dict(enumerate(mario_chars_unique))
-    elif name == "tomb":
-      int2char = dict(enumerate(tomb_chars_unique))
     elif name == "supercat":
       int2char = dict(enumerate(supercat_chars_unique))
     char2int = {ch: ii for ii, ch in int2char.items()}
@@ -121,8 +112,6 @@ def get_level(name, input):
        level = level.reshape(1,CAVE_COLS,CAVE_ROWS,CAVE_CHANNELS)
     elif name == 'mario':
        level = level.reshape(1,MARIO_COLS, MARIO_ROWS, MARIO_CHANNELS)
-    elif name == 'tomb':
-       level = level.reshape(-1,TOMB_COLS, TOMB_ROWS, TOMB_CHANNELS)
     elif name == 'supercat':
        level = level.reshape(-1,SUPERCAT_COLS, SUPERCAT_ROWS, SUPERCAT_CHANNELS)
     return level
@@ -185,9 +174,6 @@ def get_dataset_raw(game):
   elif game == 'mario':
       playble_levels = np.array(playble_levels).reshape(-1,MARIO_COLS, MARIO_ROWS)
       unplayble_levels = np.array(unplayble_levels).reshape(-1,MARIO_COLS, MARIO_ROWS)
-  elif game == 'tomb':
-      playble_levels = np.array(playble_levels).reshape(-1,TOMB_COLS, TOMB_ROWS)
-      unplayble_levels = np.array(unplayble_levels).reshape(-1,TOMB_COLS, TOMB_ROWS)
   elif game == 'supercat':
        playble_levels = np.array(playble_levels).reshape(-1,SUPERCAT_COLS, SUPERCAT_ROWS, SUPERCAT_CHANNELS)
        unplayble_levels = np.array(unplayble_levels).reshape(-1,SUPERCAT_COLS, SUPERCAT_ROWS, SUPERCAT_CHANNELS)
@@ -203,8 +189,6 @@ def get_level_raw(name, input):
        level = np.array(level).reshape(-1,CAVE_COLS,CAVE_ROWS)
     elif name == 'mario':
        level = np.array(level).reshape(-1,MARIO_COLS, MARIO_ROWS)
-    elif name == 'tomb':
-       level = np.array(level).reshape(-1,TOMB_COLS, TOMB_ROWS)
     elif name == 'supercat':
        level = np.array(level).reshape(-1,SUPERCAT_COLS, SUPERCAT_ROWS)
     return level
@@ -271,8 +255,6 @@ def get_dataset_flat(name, remove_empty = True):
        levels = levels.reshape(-1,CAVE_COLS,CAVE_ROWS)
     elif name == 'mario':
        levels = levels.reshape(-1,MARIO_COLS, MARIO_ROWS)
-    elif name == 'tomb':
-       levels = levels.reshape(-1,TOMB_COLS, TOMB_ROWS)
     elif name == 'supercat':
        levels = levels.reshape(-1,SUPERCAT_COLS, SUPERCAT_ROWS)
     return levels, labels
@@ -282,8 +264,6 @@ def get_level_flat(name, input):
       int2char = dict(enumerate(cave_chars_unique))
     elif name == "mario":
       int2char = dict(enumerate(mario_chars_unique))
-    elif name == "tomb":
-      int2char = dict(enumerate(tomb_chars_unique))
     elif name == "supercat":
       int2char = dict(enumerate(supercat_chars_unique))
     char2int = {ch: ii for ii, ch in int2char.items()}
