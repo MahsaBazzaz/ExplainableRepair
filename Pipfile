@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = "*"
+torchvision = "*"
+captum = "*"
+matplotlib = "==3.3.4"
+flask-compress = "*"
+scikit-learn = "*"
+shap = "*"
+pillow = "*"
+cairosvg = "*"
+seaborn = "*"
+opencv-python = "*"
+networkx = "*"
+pydot = "*"
+numpy = "*"
+z3-solver = "*"
+clingo = "*"
+python-sat = "*"
+cvc5 = "*"
+scipy = "*"
+cvxpy = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
