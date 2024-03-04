@@ -1,0 +1,4 @@
+[submodule "sturgeon"]
+	path = sturgeon
+	url = https://github.com/crowdgames/sturgeon.git
+	branch = repair-level
