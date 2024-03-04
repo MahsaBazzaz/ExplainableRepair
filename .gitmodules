@@ -2,3 +2,6 @@
 	path = sturgeon
 	url = https://github.com/crowdgames/sturgeon.git
 	branch = repair-level
+[submodule "level2image"]
+	path = level2image
+	url = https://github.com/crowdgames/level2image.git
