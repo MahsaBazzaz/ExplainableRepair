@@ -4,13 +4,13 @@
 # chmod +x job.sh
 # ./job.sh
 #
-if [ "$#" -ne 2 ]; then
+if [ "$#" -ne 1 ]; then
   echo "Usage: $0 <parameter1> <parameter2>"
   exit 1
 fi
 game=$1
 
-root_folder="/out/$game/$index"
+root_folder="./out/$game"
 num_runs=100
 echo "<><><><><> Parameter 1: game:  $game"
 echo "<><><><><> root_folder $root_folder"
@@ -109,7 +109,7 @@ $command
 #
 # start end hard constraint
 #
-command="python3 utils/start_end.py --input $textfile --out $start_end"
+command="python3 start_end.py --input $textfile --out $start_end"
 $command
 #
 # ig weight
@@ -124,23 +124,23 @@ $command | tail -n 1 > $full_path/deep_shap_weight_time.txt
 #
 # uniform weight
 #
-command="python3 utils/uniform_weight.py --outfile $uni_weight --game $game"
+command="python3 uniform_weight.py --outfile $uni_weight --game $game"
 $command
 #
 # ig repair
 #
-command="python3 sturgeon/scheme2output.py --outfile $ig_outputfile --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $ig_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
+command="python3 sturgeon/scheme2output.py --outfile $ig_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $ig_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
 timeout $tiemout $command | tee >(tail -n 1 > $full_path/ig_time.txt) > $full_path/ig_log.txt
 #
 # deep shap repair
 #
-command="python3 sturgeon/scheme2output.py --outfile $outputfile_shapley_1 --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $deep_shap_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
+command="python3 sturgeon/scheme2output.py --outfile $deep_shap_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $deep_shap_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
 timeout $tiemout $command | tee >(tail -n 1 > $full_path/deep_shap_time.txt) > $full_path/deep_shap_log.txt
 #
 # uniform repair
 #
 wait $pid3
-command="python3 sturgeon/scheme2output.py --outfile $outputfile_uniform --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $uni_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
+command="python3 sturgeon/scheme2output.py --outfile $uni_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $uni_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
 timeout $tiemout $command | tee >(tail -n 1 > $full_path/uniform_time.txt) > $full_path/uni_log.txt
 
 

@@ -12,7 +12,6 @@ import shap
 from data_utility import get_dataset, get_level_flat
 import argparse
 import json
-import matplotlib.pyplot as plt, pdb
 from constants import CAVE_COLS, CAVE_ROWS, CAVE_CHANNELS, MARIO_COLS, MARIO_ROWS, MARIO_CHANNELS, SUPERCAT_CHANNELS, SUPERCAT_COLS, SUPERCAT_ROWS
 from constants import cave_chars_unique, mario_chars_unique, supercat_chars_unique
 from sturgeon import util_common
