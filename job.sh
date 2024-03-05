@@ -83,9 +83,9 @@ start_end="$full_path/start_end_$current_number.txt"
 
 deep_shap_weight="$full_path/deep_shap_$current_number.json"
 deep_shap_weight_orig="$full_path/orig_deep_shap_$current_number.json"
-deep_shap_image="$full_path/shap_$current_number.png"
-deep_shap_repaired="$full_path/shap_$current_number.repaired"
-deep_shap_path="$full_path/shap_path"
+deep_shap_image="$full_path/deep_shap_$current_number.png"
+deep_shap_repaired="$full_path/deep_shap_$current_number.repaired"
+deep_shap_path="$full_path/deep_shap_path"
 
 ig_weight="$full_path/ig_$current_number.json"
 ig_weight_orig="$full_path/orig_ig_$current_number.json"
@@ -96,6 +96,8 @@ ig_path="$full_path/ig_path"
 uni_weight="$full_path/uni_$current_number.json"
 uni_repaired="$full_path/uni_$current_number.repaired"
 uni_path="$full_path/uni_path"
+uni_image="$full_path/uni_$current_number.png"
+
 
 if [ ! -d "$full_path" ]; then
     mkdir "$full_path"
@@ -104,7 +106,7 @@ fi
 #
 # generate an unplayble level
 #
-command="python3 sturgeon/scheme2output.py --outfile $full_path/$current_number --schemefile $schemefile --size $size --reach-start-goal $reachstartgoal --reach-move $reachmove --reach-unreachable --random $random_value --quiet --pattern-hard --count-soft"
+command="python3 sturgeon/scheme2output.py --outfile $full_path/$current_number --schemefile $schemefile --size $size --reach-start-goal $reachstartgoal --reach-move $reachmove --reach-unreachable --random $random_value --quiet --pattern-hard --count-soft --out-result-none "
 $command
 #
 # start end hard constraint
@@ -114,34 +116,50 @@ $command
 #
 # ig weight
 #
-command="python3 explainers/ig.py --game $game --outfile $ig_weight_orig $ig_weight --level $textfile"
+command="python3 explainers/ig.py --game $game --outfile $ig_weight_orig $ig_weight --level $textfile --outimage $ig_image"
 $command | tail -n 1 > $full_path/ig_weight_time.txt
 #
 # deep shapley weight
 #
-command="python3 explainers/deep_shap.py --game $game --outfile $deep_shap_weight_orig $deep_shap_weight --level $textfile"
+command="python3 explainers/deep_shap.py --game $game --outfile $deep_shap_weight_orig $deep_shap_weight --level $textfile --outimage $deep_shap_image"
 $command | tail -n 1 > $full_path/deep_shap_weight_time.txt
 #
 # uniform weight
 #
-command="python3 uniform_weight.py --outfile $uni_weight --game $game"
-$command
+command="python3 uniform_weight.py --outfile $uni_weight --game $game  --outimage $uni_image"
+$command | tail -n 1 > $full_path/uni_weight_time.txt
 #
 # ig repair
 #
-command="python3 sturgeon/scheme2output.py --outfile $ig_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $ig_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
+command="python3 sturgeon/scheme2output.py --outfile $ig_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $ig_weight --custom text-level $start_end hard --solver $solvers --pattern-hard --out-result-none"
 timeout $tiemout $command | tee >(tail -n 1 > $full_path/ig_time.txt) > $full_path/ig_log.txt
 #
 # deep shap repair
 #
-command="python3 sturgeon/scheme2output.py --outfile $deep_shap_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $deep_shap_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
+command="python3 sturgeon/scheme2output.py --outfile $deep_shap_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $deep_shap_weight --custom text-level $start_end hard --solver $solvers --pattern-hard --out-result-none"
 timeout $tiemout $command | tee >(tail -n 1 > $full_path/deep_shap_time.txt) > $full_path/deep_shap_log.txt
 #
 # uniform repair
 #
 wait $pid3
-command="python3 sturgeon/scheme2output.py --outfile $uni_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $uni_weight --custom text-level $start_end hard --solver $solvers --pattern-hard"
+command="python3 sturgeon/scheme2output.py --outfile $uni_repaired --schemefile $schemefile --size $size --reach-move $reachmove --reach-start-goal $reachstartgoal --custom text-level-weighted $textfile $uni_weight --custom text-level $start_end hard --solver $solvers --pattern-hard --out-result-none"
 timeout $tiemout $command | tee >(tail -n 1 > $full_path/uniform_time.txt) > $full_path/uni_log.txt
+#
+# visualize 
+#
+command="python3 level2image/level2image.py $full_path/$current_number.lvl --fmt png"
+$command
+command="python3 level2image/level2image.py $full_path/ig_$current_number.repaired.lvl --fmt png"
+$command
+command="python3 level2image/level2image.py $full_path/deep_shap_$current_number.repaired.lvl --fmt png"
+$command
+command="python3 level2image/level2image.py $full_path/uni_$current_number.repaired.lvl --fmt png"
+$command
+#
+# visualize
+#
+command="python3 combine.py --images $full_path/$current_number.out.png $full_path/ig_$current_number.repaired.out.png $full_path/deep_shap_$current_number.repaired.out.png $full_path/uni_$current_number.repaired.out.png --outfile $full_path/output.png"
+$command
 
 
 

@@ -43,7 +43,7 @@ if __name__ == '__main__':
     level = args.level
     outfile = args.outfile
 
-    print('running ' + 'Command: python ig.py ' + ' '.join([f'--{k} {v}' for k, v in vars(args).items()]))
+    print('running ' + ': python ig.py ' + ' '.join([f'--{k} {v}' for k, v in vars(args).items()]))
 
     if game == "cave":
         cols = constants.CAVE_COLS
@@ -82,26 +82,22 @@ if __name__ == '__main__':
     path = str(args.outfile[0])
     with open(path, 'w') as json_file:
         json.dump(attributions_ig.tolist(), json_file)
-
-    output = create_array_with_largest_area(np.sum(attributions_ig.squeeze().cpu().detach().numpy(), axis=0))
+    temp = np.sum(attributions_ig.squeeze().cpu().detach().numpy(), axis=0)
+    output = create_array_with_largest_area(temp)
     path = str(args.outfile[1])
     with open(path, 'w') as json_file:
         json.dump(output.tolist(), json_file)
 
     if args.outimage:
-
-        fig, axes = plt.subplots(1, 2, figsize=(10, 4))
-        cmap0 = plt.get_cmap('viridis')
-        cmap1 = plt.get_cmap('coolwarm')
-        norm0 = plt.Normalize(vmin=attributions_ig.min(), vmax=attributions_ig.max())
-        norm1 = plt.Normalize(vmin=output.min(), vmax=output.max())
-        im0 = axes[0].imshow(attributions_ig, cmap=cmap0, norm=norm0)
-        axes[0].set_title('original IG')
-        cbar0 = plt.colorbar(im0, ax=axes[0])
-
-        im1 = axes[1].imshow(output, cmap=cmap1, norm=norm1)
-        axes[1].set_title('rescaled IG')
-        cbar1 = plt.colorbar(im1, ax=axes[1])
+        cmap = plt.get_cmap('coolwarm')
+        norm = plt.Normalize(vmin=temp.min(), vmax=temp.max())
+        im = plt.imshow(temp, cmap=cmap, norm=norm)
+        cbar = plt.colorbar(im)
+        plt.tight_layout()
+        plt.axis('off')
+        plt.savefig(args.outimage)
 
         plt.tight_layout()
+        # Adjust figure size to remove whitespace
+        plt.savefig(args.outimage, bbox_inches='tight', pad_inches=0)
         plt.savefig(args.outimage)

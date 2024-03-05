@@ -3,6 +3,7 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from explainers_utility import create_array_with_largest_area
 from generic_classifier import Model, predict_proba, predict
+import matplotlib.pyplot as plt
 
 import torch
 import torch.nn as nn
@@ -103,7 +104,7 @@ if __name__ == '__main__':
     game = args.game
     level = args.level
 
-    print('running ' + 'Command: python deep_shap.py ' + ' '.join([f'--{k} {v}' for k, v in vars(args).items()]))
+    print('running ' + ': python deep_shap.py ' + ' '.join([f'--{k} {v}' for k, v in vars(args).items()]))
 
     shapley = Shapley(game)
     util_common.timer_start()
@@ -113,7 +114,21 @@ if __name__ == '__main__':
     path = str(args.outfile[0])
     with open(path, 'w') as json_file:
         json.dump(shap_values.tolist(), json_file)
-    output1 = create_array_with_largest_area(np.sum(shap_values.squeeze(), axis=2))
+    temp = np.sum(shap_values.squeeze(), axis=2)
+    output1 = create_array_with_largest_area(temp)
     path = str(args.outfile[1])
     with open(path, 'w') as json_file:
         json.dump(output1.tolist(), json_file)
+
+    if args.outimage:
+        cmap = plt.get_cmap('coolwarm')
+        norm = plt.Normalize(vmin=temp.min(), vmax=temp.max())
+        im = plt.imshow(temp, cmap=cmap, norm=norm)
+        cbar = plt.colorbar(im)
+        plt.tight_layout()
+        plt.axis('off')
+        plt.savefig(args.outimage)
+
+        plt.tight_layout()
+        plt.savefig(args.outimage, bbox_inches='tight', pad_inches=0)
+        plt.savefig(args.outimage)

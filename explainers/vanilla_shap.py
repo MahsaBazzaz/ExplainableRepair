@@ -106,7 +106,7 @@ if __name__ == '__main__':
     outfile = args.outfile
     util.timer_start()
 
-    print('running ' + 'Command: python vanilla_shap.py ' + ' '.join([f'--{k} {v}' for k, v in vars(args).items()]))
+    print('running ' + ': python vanilla_shap.py ' + ' '.join([f'--{k} {v}' for k, v in vars(args).items()]))
 
     shapley = Shapley(game)
 
@@ -125,19 +125,15 @@ if __name__ == '__main__':
         json.dump(output1.tolist(), json_file)
 
     if args.outimage:
-        fig, axes = plt.subplots(1, 2, figsize=(10, 4))
-        cmap0 = plt.get_cmap('viridis')
-        cmap1 = plt.get_cmap('coolwarm')
-        norm0 = plt.Normalize(vmin=output0.min(), vmax=output0.max())
-        norm1 = plt.Normalize(vmin=output1.min(), vmax=output1.max())
-        im0 = axes[0].imshow(output0, cmap=cmap0, norm=norm0)
-        axes[0].set_title('original Kernel Shapley')
-        cbar0 = plt.colorbar(im0, ax=axes[0])
-
-        im1 = axes[1].imshow(output1, cmap=cmap1, norm=norm1)
-        axes[1].set_title('rescaled Kernel Shapley')
-        cbar1 = plt.colorbar(im1, ax=axes[1])
+        cmap = plt.get_cmap('coolwarm')
+        norm = plt.Normalize(vmin=output0.min(), vmax=output0.max())
+        im = plt.imshow(output0, cmap=cmap, norm=norm)
+        cbar = plt.colorbar(im)
+        plt.tight_layout()
+        plt.axis('off')
+        plt.savefig(args.outimage)
 
         plt.tight_layout()
-        plt.savefig(args.outimage)
+        # Adjust figure size to remove whitespace
+        plt.savefig(args.outimage, bbox_inches='tight', pad_inches=0)
         plt.savefig(args.outimage)

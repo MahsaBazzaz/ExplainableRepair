@@ -17,7 +17,7 @@ if __name__ == '__main__':
     file_path = args.input
     output_path = args.out
 
-    print('running' + 'Command: python start_end.py ' + ' '.join([f'--{k} {v}' for k, v in vars(args).items()]))
+    print('running' + ': python start_end.py ' + ' '.join([f'--{k} {v}' for k, v in vars(args).items()]))
 
     level = []
     with open(file_path, 'r') as file:
