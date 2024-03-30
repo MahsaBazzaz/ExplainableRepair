@@ -1,0 +1,2 @@
+running sturgeon/scheme2output.py --outfile supercat03/94/t_shap_94.repaired --schemefile supercat03/supercat.scheme --size 20 20 --reach-move supercat --reach-start-goal b-t 8 --custom text-level-weighted ./supercat03/94/94.lvl supercat03/94/t_shap_94.json --custom text-level supercat03/94/start_end_94.txt hard --solver pysat-rc2 pysat-rc2-boolonly scipy --pattern-hard
+--TOTALTIME 0.02

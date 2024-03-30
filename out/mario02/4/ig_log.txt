@@ -1,0 +1,18 @@
+running sturgeon/scheme2output.py --outfile mario02/4/t_ig_4.repaired --schemefile ./mario02/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted ./mario02/4/4.lvl mario02/4/t_ig_4.json --custom text-level mario02/4/start_end_4.txt hard --solver scipy --pattern-hard
+using solver scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.01, 0.16
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.92, 1.08
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 0.34, 1.42
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 1.43
+starting solve...

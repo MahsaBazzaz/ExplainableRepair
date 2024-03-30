@@ -1,0 +1,75 @@
+running sturgeon/scheme2output.py --outfile supercat02/11/t_ig_11.repaired --schemefile supercat02/supercat.scheme --size 20 20 --reach-move supercat --reach-start-goal b-t 8 --custom text-level-weighted ./supercat02/11/11.lvl supercat02/11/t_ig_11.json --custom text-level supercat02/11/start_end_11.txt hard --solver pysat-rc2 scipy --pattern-hard
+using solver portfolio:pysat-rc2;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.01
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.88, 0.90
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 1.11, 2.00
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 2.00
+starting solve...
+portfolio starting 1 scipy
+portfolio starting 0 pysat-rc2
+portfolio finishing 0 pysat-rc2
+portfolio using 0 pysat-rc2
+objective: 50
+...solve took 47.12, 49.13
+starting create output...
+tile level
+00000000000000000000
+00000000000000000000
+01111111111111111110
+01111111111111111110
+01111111111111111110
+01111100000000111111
+01111100000000111111
+01111111111111111121
+01111111111111110000
+01111111111111110000
+01111111111111110000
+00000001111111111110
+00000001110000111110
+00000001110000111110
+11111111111111111110
+11111111111111111110
+11111111311111111110
+00000000000000000000
+00000000000000000000
+00000000000000000000
+text level
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+X------------------X
+X------------------X
+X------------------X
+X-----XXXXXXXX------
+X-----XXXXXXXX------
+X-----------------}-
+X---------------XXXX
+X---------------XXXX
+X---------------XXXX
+XXXXXXX------------X
+XXXXXXX---XXXX-----X
+XXXXXXX---XXXX-----X
+-------------------X
+-------------------X
+--------{----------X
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+META {"type": "geom", "shape": "path", "group": "path", "data": [[16, 8, 16, 9], [16, 9, 16, 10], [16, 10, 16, 11], [16, 11, 16, 12], [16, 12, 16, 13], [16, 13, 16, 14], [16, 14, 16, 15], [16, 15, 16, 16], [16, 16, 16, 17], [16, 17, 16, 18], [16, 18, 11, 18], [11, 18, 11, 17], [11, 17, 12, 17], [12, 17, 13, 18], [13, 18, 10, 14], [10, 14, 11, 13], [11, 13, 11, 12], [11, 12, 11, 11], [11, 11, 11, 10], [11, 10, 9, 6], [9, 6, 10, 5], [10, 5, 10, 4], [10, 4, 10, 3], [10, 3, 10, 2], [10, 2, 10, 1], [10, 1, 6, 1], [6, 1, 3, 5], [3, 5, 4, 6], [4, 6, 2, 1], [2, 1, 2, 2], [2, 2, 3, 1], [3, 1, 3, 2], [3, 2, 4, 1], [4, 1, 3, 3], [3, 3, 4, 2], [4, 2, 5, 1], [5, 1, 2, 5], [2, 5, 3, 6], [3, 6, 4, 7], [4, 7, 4, 8], [4, 8, 4, 9], [4, 9, 4, 10], [4, 10, 4, 11], [4, 11, 4, 12], [4, 12, 4, 13], [4, 13, 2, 15], [2, 15, 3, 14], [3, 14, 4, 15], [4, 15, 5, 15], [5, 15, 6, 15], [6, 15, 7, 16], [7, 16, 7, 17], [7, 17, 7, 18]]}
+META {"type": "geom", "shape": "tile", "group": "path", "data": [[16, 8], [16, 9], [16, 10], [16, 11], [16, 12], [16, 13], [16, 14], [16, 15], [16, 16], [16, 17], [16, 18], [15, 18], [14, 18], [13, 18], [12, 18], [11, 18], [11, 17], [12, 17], [13, 17], [13, 18], [13, 17], [12, 17], [12, 16], [11, 16], [11, 15], [10, 15], [10, 14], [11, 14], [11, 13], [11, 12], [11, 11], [11, 10], [11, 9], [10, 9], [10, 8], [9, 8], [9, 7], [9, 6], [10, 6], [10, 5], [10, 4], [10, 3], [10, 2], [10, 1], [9, 1], [8, 1], [7, 1], [6, 1], [6, 2], [5, 2], [5, 3], [4, 3], [4, 4], [3, 4], [3, 5], [4, 5], [4, 6], [4, 5], [3, 5], [3, 4], [2, 4], [2, 3], [2, 2], [2, 1], [2, 2], [3, 2], [3, 1], [3, 2], [4, 2], [4, 1], [4, 2], [3, 2], [3, 3], [4, 3], [4, 2], [5, 2], [5, 1], [5, 2], [4, 2], [4, 3], [3, 3], [3, 4], [2, 4], [2, 5], [3, 5], [3, 6], [4, 6], [4, 7], [4, 8], [4, 9], [4, 10], [4, 11], [4, 12], [4, 13], [4, 14], [3, 14], [3, 15], [2, 15], [3, 15], [3, 14], [4, 14], [4, 15], [5, 15], [6, 15], [7, 15], [7, 16], [7, 17], [7, 18]]}
+META {"type": "geom", "shape": "line", "group": "offpath", "data": [[2, 17, 3, 18], [3, 18, 2, 17], [4, 4, 5, 3], [5, 3, 6, 2], [5, 4, 6, 3], [6, 2, 7, 1], [6, 3, 7, 2], [7, 1, 4, 4], [7, 2, 8, 1], [7, 13, 8, 14], [8, 1, 5, 4], [8, 2, 9, 1], [8, 14, 9, 15], [9, 1, 8, 2], [9, 15, 7, 13], [11, 8, 12, 7], [12, 7, 11, 8], [12, 16, 13, 17], [13, 16, 14, 17], [13, 17, 14, 18], [14, 17, 15, 18], [14, 18, 12, 16], [15, 18, 13, 16], [16, 0, 16, 1], [16, 1, 16, 0], [16, 2, 16, 3], [16, 3, 16, 2], [16, 4, 16, 5], [16, 5, 16, 4], [16, 6, 16, 7], [16, 7, 16, 6]]}
+...create output took 0.03, 49.15
+writing result to supercat02/11/t_ig_11.repaired.result
+writing text level to supercat02/11/t_ig_11.repaired.lvl
+--SOLVED
+--TOTALTIME 51.93

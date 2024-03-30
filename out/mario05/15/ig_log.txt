@@ -1,0 +1,2 @@
+running sturgeon/scheme2output.py --outfile mario05/15/t_ig_15.repaired --schemefile /mario05/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted ./mario05/15/15.lvl mario05/15/t_ig_15.json --custom text-level mario05/15/start_end_15.txt hard --solver scipy --pattern-hard
+--TOTALTIME 0.25

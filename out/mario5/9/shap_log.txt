@@ -1,0 +1,2 @@
+running sturgeon/scheme2output.py --outfile mario5/9/shap_9.repaired --schemefile ./mario5/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted ./mario5/9/9.lvl mario5/9/shap_9.json --custom text-level mario5/9/start_end_9.txt hard --solver scipy --pattern-hard
+--TOTALTIME 0.21

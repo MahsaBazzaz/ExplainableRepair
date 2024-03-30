@@ -1,0 +1,20 @@
+running sturgeon/scheme2output.py --outfile mario7/10/shap_10.repaired --schemefile ./mario7/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted ./mario7/10/10.lvl mario7/10/shap_10.json --custom text-level mario7/10/start_end_10.txt hard --solver pysat-rc2-boolonly scipy --pattern-hard
+using solver portfolio:pysat-rc2-boolonly;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.01
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.69, 0.71
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 0.21, 0.91
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 0.92
+starting solve...
+portfolio starting 1 scipy
+portfolio starting 0 pysat-rc2-boolonly

@@ -1,0 +1,76 @@
+running sturgeon/scheme2output.py --outfile supercat00/5/t_shap_5.repaired --schemefile supercat00/supercat.scheme --size 20 20 --reach-move supercat --reach-start-goal b-t 8 --custom text-level-weighted ./supercat00/5/5.lvl supercat00/5/t_shap_5.json --custom text-level supercat00/5/start_end_5.txt hard --solver pysat-rc2 pysat-rc2-boolonly scipy --pattern-hard
+using solver portfolio:pysat-rc2;pysat-rc2-boolonly;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.02
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.96, 0.98
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 1.07, 2.05
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 2.05
+starting solve...
+portfolio starting 2 scipy
+portfolio starting 1 pysat-rc2-boolonly
+portfolio starting 0 pysat-rc2
+portfolio finishing 0 pysat-rc2
+portfolio using 0 pysat-rc2
+objective: 14
+...solve took 43.27, 45.33
+starting create output...
+tile level
+00000000000000000000
+00000000000000000000
+01111111111111111110
+01111111111111111110
+01111111111111111110
+01111100000000111111
+01111100000000111111
+01111111111111111121
+01111111111111110000
+01111111111111110000
+01111111110001110000
+00000011110001111110
+00000011110001111110
+00000011111111111110
+11111111111111111110
+11111111111111111110
+11111111131111111110
+00000000000000000000
+00000000000000000000
+00000000000000000000
+text level
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+X------------------X
+X------------------X
+X------------------X
+X-----XXXXXXXX------
+X-----XXXXXXXX------
+X-----------------}-
+X---------------XXXX
+X---------------XXXX
+X---------XXX---XXXX
+XXXXXX----XXX------X
+XXXXXX----XXX------X
+XXXXXX-------------X
+-------------------X
+-------------------X
+---------{---------X
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+META {"type": "geom", "shape": "path", "group": "path", "data": [[16, 9, 16, 10], [16, 10, 16, 11], [16, 11, 16, 12], [16, 12, 16, 13], [16, 13, 16, 14], [16, 14, 16, 15], [16, 15, 16, 16], [16, 16, 16, 17], [16, 17, 16, 18], [16, 18, 11, 18], [11, 18, 11, 17], [11, 17, 12, 18], [12, 18, 11, 16], [11, 16, 12, 17], [12, 17, 13, 18], [13, 18, 10, 14], [10, 14, 11, 13], [11, 13, 9, 15], [9, 15, 7, 13], [7, 13, 8, 12], [8, 12, 9, 12], [9, 12, 7, 16], [7, 16, 7, 17], [7, 17, 7, 18]]}
+META {"type": "geom", "shape": "tile", "group": "path", "data": [[16, 9], [16, 10], [16, 11], [16, 12], [16, 13], [16, 14], [16, 15], [16, 16], [16, 17], [16, 18], [15, 18], [14, 18], [13, 18], [12, 18], [11, 18], [11, 17], [12, 17], [12, 18], [12, 17], [11, 17], [11, 16], [12, 16], [12, 17], [13, 17], [13, 18], [13, 17], [12, 17], [12, 16], [11, 16], [11, 15], [10, 15], [10, 14], [11, 14], [11, 13], [11, 14], [10, 14], [10, 15], [9, 15], [9, 14], [8, 14], [8, 13], [7, 13], [8, 13], [8, 12], [9, 12], [9, 13], [8, 13], [8, 14], [7, 14], [7, 15], [7, 16], [7, 17], [7, 18]]}
+META {"type": "geom", "shape": "line", "group": "offpath", "data": [[2, 2, 3, 1], [2, 4, 3, 3], [2, 5, 3, 4], [3, 1, 2, 2], [3, 3, 4, 2], [3, 4, 4, 4], [4, 1, 2, 4], [4, 2, 5, 1], [4, 4, 5, 3], [4, 5, 5, 4], [4, 7, 4, 8], [4, 8, 4, 7], [4, 9, 4, 10], [4, 10, 4, 9], [4, 12, 4, 13], [4, 13, 4, 12], [5, 1, 2, 5], [5, 2, 6, 1], [5, 3, 6, 2], [5, 4, 6, 4], [6, 1, 5, 2], [6, 2, 7, 1], [6, 3, 7, 2], [6, 4, 7, 3], [6, 5, 7, 5], [7, 1, 4, 5], [7, 2, 8, 1], [7, 3, 8, 2], [7, 5, 8, 6], [7, 6, 8, 5], [8, 1, 6, 3], [8, 2, 9, 1], [8, 5, 9, 4], [8, 6, 9, 6], [9, 1, 6, 5], [9, 4, 10, 3], [9, 6, 10, 5], [9, 7, 10, 8], [9, 10, 7, 6], [10, 1, 4, 1], [10, 2, 10, 1], [10, 3, 10, 2], [10, 5, 10, 6], [10, 6, 11, 7], [10, 8, 11, 9], [11, 7, 12, 6], [11, 9, 9, 7], [12, 6, 9, 10], [12, 16, 13, 17], [13, 16, 14, 17], [13, 17, 14, 18], [14, 17, 15, 18], [14, 18, 12, 16], [15, 18, 13, 16], [16, 2, 16, 3], [16, 3, 16, 2], [16, 4, 16, 5], [16, 5, 16, 4]]}
+...create output took 0.02, 45.34
+writing result to supercat00/5/t_shap_5.repaired.result
+writing text level to supercat00/5/t_shap_5.repaired.lvl
+--SOLVED
+--TOTALTIME 46.28

@@ -1,0 +1,21 @@
+running sturgeon/scheme2output.py --outfile /scratch/bazzaz.ma/supercat7/14/shap_14.repaired --schemefile /scratch/bazzaz.ma/supercat7/supercat.scheme --size 20 20 --reach-move supercat --reach-start-goal b-t 8 --custom text-level-weighted /scratch/bazzaz.ma/supercat7/14/14.lvl /scratch/bazzaz.ma/supercat7/14/shap_14.json --custom text-level /scratch/bazzaz.ma/supercat7/14/start_end_14.txt hard --solver pysat-rc2 scipy pysat-rc2-boolonly --pattern-hard
+using solver portfolio:pysat-rc2;scipy;pysat-rc2-boolonly
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.04
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 5.07, 5.11
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 6.53, 11.63
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.01, 11.64
+starting solve...
+portfolio starting 1 scipy
+portfolio starting 0 pysat-rc2
+portfolio starting 2 pysat-rc2-boolonly

@@ -1,0 +1,63 @@
+running sturgeon/scheme2output.py --outfile mario03/20/shap_20.repaired --schemefile ./mario03/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted ./mario03/20/20.lvl mario03/20/shap_20.json --custom text-level mario03/20/start_end_20.txt hard --solver pysat-rc2-boolonly scipy --pattern-hard
+using solver portfolio:pysat-rc2-boolonly;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.03, 0.11
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 8.81, 8.91
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 2.59, 11.51
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 11.51
+starting solve...
+portfolio starting 1 scipy
+portfolio starting 0 pysat-rc2-boolonly
+portfolio finishing 0 pysat-rc2-boolonly
+portfolio using 0 pysat-rc2-boolonly
+objective: 1
+...solve took 1786.37, 1797.88
+starting create output...
+tile level
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000021000000000000
+000000000000000000
+000000000000002000
+000000000000000000
+000000000022000000
+000000300000000800
+009003300000000300
+333333300000033333
+text level
+------------------
+------------------
+------------------
+------------------
+------------------
+------------------
+----SQ------------
+------------------
+--------------S---
+------------------
+----------SS------
+------X--------}--
+--{--XX--------X--
+XXXXXXX------XXXXX
+META {"type": "geom", "shape": "path", "group": "path", "data": [[12, 2, 8, 6], [8, 6, 9, 6], [9, 6, 10, 6], [10, 6, 6, 10], [6, 10, 7, 11], [7, 11, 8, 12], [8, 12, 9, 12], [9, 12, 10, 13], [10, 13, 11, 14], [11, 14, 12, 13], [12, 13, 9, 15], [9, 15, 10, 14], [10, 14, 11, 15]]}
+META {"type": "geom", "shape": "tile", "group": "path", "data": [[12, 2], [11, 2], [11, 3], [10, 3], [10, 4], [9, 4], [9, 5], [8, 5], [8, 6], [9, 6], [10, 6], [9, 6], [9, 7], [8, 7], [8, 8], [7, 8], [7, 9], [6, 9], [6, 10], [7, 10], [7, 11], [8, 11], [8, 12], [9, 12], [10, 12], [10, 13], [11, 13], [11, 14], [12, 14], [12, 13], [11, 13], [11, 14], [10, 14], [10, 15], [9, 15], [10, 15], [10, 14], [11, 14], [11, 15]]}
+META {"type": "geom", "shape": "line", "group": "offpath", "data": [[1, 8, 2, 8], [2, 8, 3, 7], [3, 7, 4, 6], [3, 10, 4, 10], [4, 4, 5, 4], [4, 6, 5, 5], [4, 10, 5, 9], [5, 4, 1, 8], [5, 5, 4, 4], [5, 9, 6, 9], [5, 12, 6, 13], [6, 9, 7, 9], [6, 13, 7, 14], [7, 9, 8, 10], [7, 14, 3, 10], [8, 10, 9, 11], [9, 11, 5, 12], [10, 15, 11, 16], [10, 17, 11, 17], [11, 16, 12, 17], [11, 17, 12, 16], [12, 16, 10, 17], [12, 17, 10, 15]]}
+...create output took 0.01, 1797.88
+writing result to mario03/20/shap_20.repaired.result
+writing text level to mario03/20/shap_20.repaired.lvl
+--SOLVED
+--TOTALTIME 1802.61

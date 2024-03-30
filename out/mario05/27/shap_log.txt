@@ -1,0 +1,20 @@
+running sturgeon/scheme2output.py --outfile mario05/27/shap_27.repaired --schemefile ./mario05/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted ./mario05/27/27.lvl mario05/27/shap_27.json --custom text-level mario05/27/start_end_27.txt hard --solver pysat-rc2-boolonly scipy --pattern-hard
+using solver portfolio:pysat-rc2-boolonly;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.03, 0.10
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 8.44, 8.54
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 2.43, 10.97
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 10.97
+starting solve...
+portfolio starting 0 pysat-rc2-boolonly
+portfolio starting 1 scipy

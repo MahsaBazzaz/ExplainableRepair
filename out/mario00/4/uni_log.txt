@@ -1,0 +1,18 @@
+running sturgeon/scheme2output.py --outfile /scratch/bazzaz.ma/mario00/4/uniform_4.repaired --schemefile /scratch/bazzaz.ma/mario00/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted /scratch/bazzaz.ma/mario00/4/4.lvl /scratch/bazzaz.ma/mario00/4/uniform_4.json --custom text-level /scratch/bazzaz.ma/mario00/4/start_end_4.txt hard --solver scipy --pattern-hard
+using solver scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.01, 0.73
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 2.88, 3.61
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 0.99, 4.60
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.02, 4.62
+starting solve...

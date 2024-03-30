@@ -1,0 +1,20 @@
+running sturgeon/scheme2output.py --outfile mario03/38/shap_38.repaired --schemefile ./mario03/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted ./mario03/38/38.lvl mario03/38/shap_38.json --custom text-level mario03/38/start_end_38.txt hard --solver pysat-rc2-boolonly scipy --pattern-hard
+using solver portfolio:pysat-rc2-boolonly;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.04, 0.13
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 7.90, 8.02
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 2.25, 10.28
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.06, 10.34
+starting solve...
+portfolio starting 0 pysat-rc2-boolonly
+portfolio starting 1 scipy

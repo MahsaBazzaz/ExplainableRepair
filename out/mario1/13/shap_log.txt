@@ -1,0 +1,21 @@
+running sturgeon/scheme2output.py --outfile /scratch/bazzaz.ma/mario1/13/shap_13.repaired --schemefile /scratch/bazzaz.ma/mario1/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted /scratch/bazzaz.ma/mario1/13/13.lvl /scratch/bazzaz.ma/mario1/13/shap_13.json --custom text-level /scratch/bazzaz.ma/mario1/13/start_end_13.txt hard --solver scipy pysat-rc2-boolonly pysat-rc2 --pattern-hard
+using solver portfolio:scipy;pysat-rc2-boolonly;pysat-rc2
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.01
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.50, 0.51
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 0.17, 0.68
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 0.68
+starting solve...
+portfolio starting 2 pysat-rc2
+portfolio starting 1 pysat-rc2-boolonly
+portfolio starting 0 scipy

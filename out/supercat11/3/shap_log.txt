@@ -1,0 +1,76 @@
+running sturgeon/scheme2output.py --outfile /scratch/bazzaz.ma/supercat11/3/shap_3.repaired --schemefile /scratch/bazzaz.ma/supercat11/supercat.scheme --size 20 20 --reach-move supercat --reach-start-goal b-t 8 --custom text-level-weighted /scratch/bazzaz.ma/supercat11/3/3.lvl /scratch/bazzaz.ma/supercat11/3/shap_3.json --custom text-level /scratch/bazzaz.ma/supercat11/3/start_end_3.txt hard --solver pysat-rc2 scipy pysat-rc2-boolonly --pattern-hard
+using solver portfolio:pysat-rc2;scipy;pysat-rc2-boolonly
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.02
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 3.18, 3.20
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 5.68, 8.88
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.02, 8.89
+starting solve...
+portfolio starting 1 scipy
+portfolio starting 0 pysat-rc2
+portfolio starting 2 pysat-rc2-boolonly
+portfolio finishing 2 pysat-rc2-boolonly
+portfolio using 2 pysat-rc2-boolonly
+objective: 40
+...solve took 1014.19, 1023.09
+starting create output...
+tile level
+00000000000000000000
+00000000000000000000
+01111111111111111110
+01111111111111111110
+01111111111111111110
+01110000000000111111
+01110000000000111111
+01111111111111111121
+01111111111111110000
+01111111111111110000
+01111111100001110000
+00000011100001111110
+00000011100001111110
+00000011111111111110
+11111111111111111110
+11111111111111111110
+11111111311111111110
+00000000000000000000
+00000000000000000000
+00000000000000000000
+text level
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+X------------------X
+X------------------X
+X------------------X
+X---XXXXXXXXXX------
+X---XXXXXXXXXX------
+X-----------------}-
+X---------------XXXX
+X---------------XXXX
+X--------XXXX---XXXX
+XXXXXX---XXXX------X
+XXXXXX---XXXX------X
+XXXXXX-------------X
+-------------------X
+-------------------X
+--------{----------X
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXX
+META {"type": "geom", "shape": "path", "group": "path", "data": [[16, 8, 16, 9], [16, 9, 16, 10], [16, 10, 16, 11], [16, 11, 16, 12], [16, 12, 16, 13], [16, 13, 16, 14], [16, 14, 16, 15], [16, 15, 16, 16], [16, 16, 16, 17], [16, 17, 16, 18], [16, 18, 13, 18], [13, 18, 10, 14], [10, 14, 11, 13], [11, 13, 9, 15], [9, 15, 7, 13], [7, 13, 8, 13], [8, 13, 9, 12], [9, 12, 7, 16], [7, 16, 7, 17], [7, 17, 7, 18]]}
+META {"type": "geom", "shape": "tile", "group": "path", "data": [[16, 8], [16, 9], [16, 10], [16, 11], [16, 12], [16, 13], [16, 14], [16, 15], [16, 16], [16, 17], [16, 18], [15, 18], [14, 18], [13, 18], [13, 17], [12, 17], [12, 16], [11, 16], [11, 15], [10, 15], [10, 14], [11, 14], [11, 13], [11, 14], [10, 14], [10, 15], [9, 15], [9, 14], [8, 14], [8, 13], [7, 13], [8, 13], [9, 13], [9, 12], [9, 13], [8, 13], [8, 14], [7, 14], [7, 15], [7, 16], [7, 17], [7, 18]]}
+META {"type": "geom", "shape": "line", "group": "offpath", "data": [[2, 1, 2, 2], [2, 2, 3, 1], [2, 3, 3, 2], [3, 1, 2, 3], [3, 2, 4, 3], [4, 1, 5, 1], [4, 3, 5, 2], [4, 4, 2, 1], [4, 7, 4, 8], [4, 8, 4, 7], [4, 9, 4, 10], [4, 10, 4, 9], [5, 1, 6, 2], [5, 2, 6, 1], [6, 1, 4, 4], [6, 2, 7, 1], [7, 1, 7, 2], [7, 2, 8, 1], [7, 6, 8, 5], [8, 1, 9, 2], [8, 5, 9, 6], [8, 10, 9, 10], [9, 2, 10, 3], [9, 6, 10, 5], [9, 9, 7, 6], [9, 10, 9, 9], [10, 1, 4, 1], [10, 2, 10, 1], [10, 3, 10, 2], [10, 5, 8, 10], [13, 17, 14, 18], [14, 17, 15, 18], [14, 18, 13, 17], [15, 18, 14, 17]]}
+...create output took 1.68, 1024.76
+writing result to /scratch/bazzaz.ma/supercat11/3/shap_3.repaired.result
+writing text level to /scratch/bazzaz.ma/supercat11/3/shap_3.repaired.lvl
+--SOLVED
+--TOTALTIME 1028.08

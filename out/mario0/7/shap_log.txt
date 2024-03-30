@@ -1,0 +1,2 @@
+running sturgeon/scheme2output.py --outfile mario0/7/shap_7.repaired --schemefile ./mario0/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted ./mario0/7/7.lvl mario0/7/shap_7.json --custom text-level mario0/7/start_end_7.txt hard --solver pysat-rc2-boolonly scipy --pattern-hard
+--TOTALTIME 0.01

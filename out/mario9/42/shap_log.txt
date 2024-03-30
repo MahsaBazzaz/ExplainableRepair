@@ -1,0 +1,64 @@
+running sturgeon/scheme2output.py --outfile /scratch/bazzaz.ma/mario9/42/shap_42.repaired --schemefile /scratch/bazzaz.ma/mario9/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted /scratch/bazzaz.ma/mario9/42/42.lvl /scratch/bazzaz.ma/mario9/42/shap_42.json --custom text-level /scratch/bazzaz.ma/mario9/42/start_end_42.txt hard --solver scipy pysat-rc2-boolonly pysat-rc2 --pattern-hard
+using solver portfolio:scipy;pysat-rc2-boolonly;pysat-rc2
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.04
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 2.78, 2.82
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 0.94, 3.75
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 3.76
+starting solve...
+portfolio starting 2 pysat-rc2
+portfolio starting 1 pysat-rc2-boolonly
+portfolio starting 0 scipy
+portfolio finishing 0 scipy
+portfolio using 0 scipy
+objective: 1.0
+...solve took 2240.94, 2244.70
+starting create output...
+tile level
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000000000
+000000000000002000
+000010001002000000
+000000000000000000
+000000000000000000
+000000001003000800
+009000000003300300
+333330000003333333
+text level
+------------------
+------------------
+------------------
+------------------
+------------------
+------------------
+------------------
+--------------S---
+----Q---Q--S------
+------------------
+------------------
+--------Q--X---}--
+--{--------XX--X--
+XXXXX------XXXXXXX
+META {"type": "geom", "shape": "path", "group": "path", "data": [[12, 2, 8, 5], [8, 5, 9, 5], [9, 5, 10, 5], [10, 5, 11, 4], [11, 4, 12, 3], [12, 3, 8, 6], [8, 6, 9, 7], [9, 7, 10, 8], [10, 8, 6, 11], [6, 11, 7, 11], [7, 11, 3, 11], [3, 11, 4, 10], [4, 10, 5, 9], [5, 9, 6, 9], [6, 9, 7, 9], [7, 9, 8, 10], [8, 10, 9, 11], [9, 11, 10, 12], [10, 12, 11, 12], [11, 12, 7, 13], [7, 13, 8, 14], [8, 14, 9, 14], [9, 14, 10, 15], [10, 15, 11, 15]]}
+META {"type": "geom", "shape": "tile", "group": "path", "data": [[12, 2], [11, 2], [11, 3], [10, 3], [10, 4], [9, 4], [9, 5], [8, 5], [9, 5], [10, 5], [11, 5], [11, 4], [12, 4], [12, 3], [11, 3], [11, 4], [10, 4], [10, 5], [9, 5], [9, 6], [8, 6], [9, 6], [9, 7], [10, 7], [10, 8], [9, 8], [9, 9], [8, 9], [8, 10], [7, 10], [7, 11], [6, 11], [7, 11], [6, 11], [5, 11], [4, 11], [3, 11], [4, 11], [4, 10], [5, 10], [5, 9], [6, 9], [7, 9], [8, 9], [8, 10], [9, 10], [9, 11], [10, 11], [10, 12], [11, 12], [10, 12], [9, 12], [8, 12], [7, 12], [7, 13], [8, 13], [8, 14], [9, 14], [10, 14], [10, 15], [11, 15]]}
+META {"type": "geom", "shape": "line", "group": "offpath", "data": [[2, 14, 3, 13], [3, 7, 4, 6], [3, 12, 4, 12], [3, 13, 4, 14], [4, 6, 5, 5], [4, 12, 5, 11], [4, 14, 5, 14], [5, 5, 6, 5], [5, 11, 6, 12], [5, 14, 6, 14], [6, 5, 7, 4], [6, 7, 7, 8], [6, 12, 7, 12], [6, 14, 2, 14], [7, 4, 3, 7], [7, 8, 3, 12], [7, 12, 8, 12], [8, 2, 9, 2], [8, 3, 9, 4], [8, 7, 9, 6], [8, 9, 9, 10], [8, 12, 9, 12], [8, 15, 9, 16], [8, 16, 9, 15], [9, 2, 10, 2], [9, 4, 10, 3], [9, 6, 10, 6], [9, 10, 10, 11], [9, 12, 10, 13], [9, 15, 10, 16], [9, 16, 10, 17], [10, 2, 11, 1], [10, 3, 11, 2], [10, 6, 11, 5], [10, 11, 6, 7], [10, 13, 11, 14], [10, 16, 11, 17], [10, 17, 11, 16], [11, 1, 12, 0], [11, 2, 12, 1], [11, 5, 12, 4], [11, 14, 12, 13], [11, 16, 12, 17], [11, 17, 12, 16], [12, 0, 8, 3], [12, 1, 8, 2], [12, 4, 8, 7], [12, 13, 8, 9], [12, 16, 8, 15], [12, 17, 8, 16]]}
+...create output took 0.01, 2244.71
+writing result to /scratch/bazzaz.ma/mario9/42/shap_42.repaired.result
+writing text level to /scratch/bazzaz.ma/mario9/42/shap_42.repaired.lvl
+--SOLVED
+--TOTALTIME 2244.86

@@ -1,0 +1,2 @@
+running sturgeon/scheme2output.py --outfile /scratch/bazzaz.ma/mario00/8/shap_8.repaired --schemefile /scratch/bazzaz.ma/mario00/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted /scratch/bazzaz.ma/mario00/8/8.lvl /scratch/bazzaz.ma/mario00/8/shap_8.json --custom text-level /scratch/bazzaz.ma/mario00/8/start_end_8.txt hard --solver scipy --pattern-hard
+--TOTALTIME 0.25

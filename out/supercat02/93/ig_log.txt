@@ -1,0 +1,20 @@
+running sturgeon/scheme2output.py --outfile supercat02/93/t_ig_93.repaired --schemefile supercat02/supercat.scheme --size 20 20 --reach-move supercat --reach-start-goal b-t 8 --custom text-level-weighted ./supercat02/93/93.lvl supercat02/93/t_ig_93.json --custom text-level supercat02/93/start_end_93.txt hard --solver pysat-rc2 scipy --pattern-hard
+using solver portfolio:pysat-rc2;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.02
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.94, 0.95
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 1.11, 2.07
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 2.07
+starting solve...
+portfolio starting 1 scipy
+portfolio starting 0 pysat-rc2

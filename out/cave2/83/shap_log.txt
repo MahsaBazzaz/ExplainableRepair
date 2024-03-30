@@ -1,0 +1,67 @@
+running sturgeon/scheme2output.py --outfile /scratch/bazzaz.ma/cave2/83/shap_83.repaired --schemefile /scratch/bazzaz.ma/cave2/cave.scheme --size 15 12 --reach-move maze --reach-start-goal tl-br 5 --custom text-level-weighted /scratch/bazzaz.ma/cave2/83/83.lvl /scratch/bazzaz.ma/cave2/83/shap_83.json --custom text-level /scratch/bazzaz.ma/cave2/83/start_end_83.txt hard --solver pysat-rc2 scipy pysat-rc2-boolonly --pattern-hard
+using solver portfolio:pysat-rc2;scipy;pysat-rc2-boolonly
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.01, 0.04
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.53, 0.57
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 0.03, 0.59
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 0.60
+starting solve...
+portfolio starting 2 pysat-rc2-boolonly
+portfolio starting 1 scipy
+portfolio starting 0 pysat-rc2
+portfolio finishing 0 pysat-rc2
+portfolio using 0 pysat-rc2
+objective: 30
+...solve took 3.92, 4.52
+starting create output...
+tile level
+440121111113
+01967666666a
+5p66666illlj
+blllc6681113
+01119666666a
+56666ic6666a
+blllljbc666a
+44444409666a
+011301966ilj
+566896666813
+56k66dgh66qa
+56m66666illj
+567666668113
+566ic6ic666a
+blljbljblllj
+text level
+XXXXXXXXXXXX
+XXX-X------X
+X{-----XXXXX
+XXXXX--XXXXX
+XXXXX------X
+X----XX----X
+XXXXXXXX---X
+XXXXXXXX---X
+XXXXXXX--XXX
+X--XX----XXX
+X-X--XXX--}X
+X-X-----XXXX
+X-X-----XXXX
+X--XX-XX---X
+XXXXXXXXXXXX
+META {"type": "geom", "shape": "path", "group": "path", "data": [[2, 1, 2, 2], [2, 2, 2, 3], [2, 3, 2, 4], [2, 4, 2, 5], [2, 5, 3, 5], [3, 5, 4, 5], [4, 5, 4, 6], [4, 6, 4, 7], [4, 7, 5, 7], [5, 7, 5, 8], [5, 8, 5, 9], [5, 9, 5, 10], [5, 10, 6, 10], [6, 10, 7, 10], [7, 10, 7, 9], [7, 9, 7, 8], [7, 8, 8, 8], [8, 8, 9, 8], [9, 8, 10, 8], [10, 8, 10, 9], [10, 9, 10, 10]]}
+META {"type": "geom", "shape": "tile", "group": "path", "data": [[2, 1], [2, 2], [2, 3], [2, 4], [2, 5], [3, 5], [4, 5], [4, 6], [4, 7], [5, 7], [5, 8], [5, 9], [5, 10], [6, 10], [7, 10], [7, 9], [7, 8], [8, 8], [9, 8], [10, 8], [10, 9], [10, 10]]}
+META {"type": "geom", "shape": "line", "group": "offpath", "data": [[1, 5, 1, 6], [1, 6, 1, 5], [1, 8, 1, 9], [1, 9, 1, 8], [4, 8, 4, 9], [4, 9, 4, 8], [6, 8, 6, 9], [6, 9, 6, 8], [9, 1, 10, 1], [10, 1, 9, 1], [11, 1, 12, 1], [11, 4, 11, 5], [11, 5, 12, 5], [12, 1, 11, 1], [12, 4, 11, 4], [12, 5, 12, 4], [13, 1, 13, 2], [13, 2, 13, 1], [13, 8, 13, 9], [13, 9, 13, 8]]}
+...create output took 0.01, 4.53
+writing result to /scratch/bazzaz.ma/cave2/83/shap_83.repaired.result
+writing text level to /scratch/bazzaz.ma/cave2/83/shap_83.repaired.lvl
+writing image level to /scratch/bazzaz.ma/cave2/83/shap_83.repaired.png
+--SOLVED
+--TOTALTIME 4.66

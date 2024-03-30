@@ -1,0 +1,66 @@
+running sturgeon/scheme2output.py --outfile ./out/cave00/2/t_shap_2.repaired --schemefile ././out/cave00/cave.scheme --size 15 12 --reach-move maze --reach-start-goal tl-br 5 --custom text-level-weighted ././out/cave00/2/2.lvl ./out/cave00/2/t_shap_2.json --custom text-level ./out/cave00/2/start_end_2.txt hard --solver pysat-rc2 scipy --pattern-hard
+using solver portfolio:pysat-rc2;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.01, 0.01
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.17, 0.18
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 0.01, 0.19
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 0.19
+starting solve...
+portfolio starting 0 pysat-rc2
+portfolio starting 1 scipy
+portfolio finishing 1 scipy
+portfolio using 1 scipy
+objective: 69.99999999999997
+...solve took 21.07, 21.26
+starting create output...
+tile level
+444011111113
+40196666666a
+45p666dgh66a
+4blc6666666a
+01196illlc6a
+56666a444blj
+566668113013
+56k66666896a
+56m66666666a
+56766ic6f66a
+nh6iljbc66ij
+566813096ij4
+nh6668966813
+566ic66666qa
+blljbllllllj
+text level
+XXXXXXXXXXXX
+XXXX-------X
+XX{---XXX--X
+XXXX-------X
+XXXX-XXXXX-X
+X----XXXXXXX
+X----XXXXXXX
+X-X-----XX-X
+X-X--------X
+X-X--XX-X--X
+XX-XXXXX--XX
+X--XXXXX-XXX
+XX---XX--XXX
+X--XX-----}X
+XXXXXXXXXXXX
+META {"type": "geom", "shape": "path", "group": "path", "data": [[2, 2, 2, 3], [2, 3, 2, 4], [2, 4, 3, 4], [3, 4, 4, 4], [4, 4, 5, 4], [5, 4, 5, 3], [5, 3, 6, 3], [6, 3, 7, 3], [7, 3, 7, 4], [7, 4, 8, 4], [8, 4, 8, 5], [8, 5, 8, 6], [8, 6, 7, 6], [7, 6, 7, 7], [7, 7, 8, 7], [8, 7, 8, 8], [8, 8, 8, 9], [8, 9, 9, 9], [9, 9, 10, 9], [10, 9, 10, 8], [10, 8, 11, 8], [11, 8, 12, 8], [12, 8, 12, 7], [12, 7, 13, 7], [13, 7, 13, 8], [13, 8, 13, 9], [13, 9, 13, 10]]}
+META {"type": "geom", "shape": "tile", "group": "path", "data": [[2, 2], [2, 3], [2, 4], [3, 4], [4, 4], [5, 4], [5, 3], [6, 3], [7, 3], [7, 4], [8, 4], [8, 5], [8, 6], [7, 6], [7, 7], [8, 7], [8, 8], [8, 9], [9, 9], [10, 9], [10, 8], [11, 8], [12, 8], [12, 7], [13, 7], [13, 8], [13, 9], [13, 10]]}
+META {"type": "geom", "shape": "line", "group": "offpath", "data": [[1, 5, 2, 5], [1, 6, 1, 5], [1, 7, 1, 6], [1, 8, 1, 7], [1, 9, 1, 8], [2, 5, 3, 5], [2, 9, 1, 9], [2, 10, 3, 10], [3, 5, 3, 6], [3, 6, 3, 7], [3, 7, 3, 8], [3, 8, 3, 9], [3, 9, 2, 9], [3, 10, 2, 10], [6, 1, 7, 1], [7, 1, 6, 1], [8, 10, 9, 10], [9, 10, 8, 10], [10, 2, 11, 2], [11, 2, 10, 2], [12, 2, 13, 2], [12, 3, 12, 4], [12, 4, 12, 3], [13, 2, 12, 2]]}
+...create output took 0.01, 21.26
+writing result to ./out/cave00/2/t_shap_2.repaired.result
+writing text level to ./out/cave00/2/t_shap_2.repaired.lvl
+writing image level to ./out/cave00/2/t_shap_2.repaired.png
+--SOLVED
+--TOTALTIME 21.28

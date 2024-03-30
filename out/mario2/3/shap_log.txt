@@ -1,0 +1,18 @@
+running sturgeon/scheme2output.py --outfile /scratch/bazzaz.ma/mario2/3/shap_3.repaired --schemefile /scratch/bazzaz.ma/mario2/mario.scheme --size 14 18 --reach-move platform --reach-start-goal l-r 4 --custom text-level-weighted /scratch/bazzaz.ma/mario2/3/3.lvl /scratch/bazzaz.ma/mario2/3/shap_3.json --custom text-level /scratch/bazzaz.ma/mario2/3/start_end_3.txt hard --solver scipy --pattern-hard
+using solver scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.01, 0.57
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 1.04, 1.61
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 0.29, 1.90
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 1.90
+starting solve...

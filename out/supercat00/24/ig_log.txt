@@ -1,0 +1,23 @@
+running sturgeon/scheme2output.py --outfile supercat00/24/t_ig_24.repaired --schemefile supercat00/supercat.scheme --size 20 20 --reach-move supercat --reach-start-goal b-t 8 --custom text-level-weighted ./supercat00/24/24.lvl supercat00/24/t_ig_24.json --custom text-level supercat00/24/start_end_24.txt hard --solver pysat-rc2 scipy --pattern-hard
+using solver portfolio:pysat-rc2;scipy
+starting add tile rules...
+add tile constraints
+...add tile rules took 0.00, 0.02
+starting add pattern rules...
+add pattern constraints None
+scheme has counts but not using count rules
+...add pattern rules took 0.95, 0.97
+starting add reachability rules...
+add reachability start goal constraints
+add reachability move constraints
+...add reachability rules took 1.05, 2.02
+starting add custom...
+add custom out text level weighted constraint
+add custom out text level constraint None
+...add custom took 0.00, 2.03
+starting solve...
+portfolio starting 1 scipy
+portfolio starting 0 pysat-rc2
+portfolio error 1 scipy Unable to allocate 64.3 GiB for an array with shape (198843, 43399) and data type float64
+...solve took 14.01, 16.04
+--TOTALTIME 16.04
