@@ -38,6 +38,7 @@ if __name__ == '__main__':
     
     # Define the optimizer and the learning rate
     lr = 0.0001
+    weight_decay = 0.01
     model = Model(cols, rows, channels)
     criterion = nn.BCELoss()
     optimizer = optim.RMSprop(model.parameters(), lr=lr)
